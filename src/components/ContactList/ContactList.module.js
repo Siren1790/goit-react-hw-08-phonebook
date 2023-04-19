@@ -19,7 +19,7 @@ export const ContactItem = styled.li`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  &:nth-child(2n + 1) {
+  &:nth-of-type(2n + 1) {
     background-color: #d4cab6;
   }
 `;
