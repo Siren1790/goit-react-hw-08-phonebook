@@ -13,11 +13,13 @@ const styles = {
 export default function AppBar() {
   return (
     <>
-    <header style={styles.header}>
-        <NavLink to='/registration'>Registration</NavLink>
-        <NavLink to='/login'>LogIn</NavLink>
-    </header>
-    <Outlet/>
+      <header style={styles.header}>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to="/phonebook">PhoneBook</NavLink>
+        <NavLink to="/registration">Registration</NavLink>
+        <NavLink to="/login">LogIn</NavLink>
+      </header>
+      <Outlet />
     </>
   );
 }

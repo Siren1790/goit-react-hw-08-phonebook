@@ -1,6 +1,6 @@
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/authOperations';
 
 const styles = {
   form: {
@@ -13,8 +13,8 @@ const styles = {
   },
 };
 
-export default function Login() {
-  //   const dispatch = useDispatch();
+export const LoginIn = () => {
+    const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,9 +31,7 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // dispatch(authOperations.logIn({ email, password }));
-    console.log('Email" ', email);
-    console.log('Password" ', password);
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };
