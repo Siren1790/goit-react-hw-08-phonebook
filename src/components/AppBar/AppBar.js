@@ -1,5 +1,7 @@
-import { Outlet } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import { AuthNav } from 'components/AuthNav/AuthNav';
+import { Navigation } from 'components/Navigation/Navigation';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { useAuth } from 'hooks/useAuth';
 
 const styles = {
   header: {
@@ -11,15 +13,15 @@ const styles = {
 };
 
 export default function AppBar() {
+  const { isLoggedIn } = useAuth();
   return (
-    <>
-      <header style={styles.header}>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to="/phonebook">PhoneBook</NavLink>
-        <NavLink to="/registration">Registration</NavLink>
-        <NavLink to="/login">LogIn</NavLink>
-      </header>
-      <Outlet />
-    </>
+    <header style={styles.header}>
+      {/* <NavLink to="/">Home</NavLink>
+      <NavLink to="/phonebook">PhoneBook</NavLink> */}
+      <Navigation />
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {/* <NavLink to="/registration">Registration</NavLink>
+      <NavLink to="/login">LogIn</NavLink> */}
+    </header>
   );
 }

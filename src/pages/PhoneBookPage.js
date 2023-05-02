@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
-import { ContactForm, ContactList, Filter } from '..';
-import { PhoneBookStyled } from '../App/App.module';
-import { fetchContacts } from 'redux/operations';
-import { getError, getIsLoading } from 'redux/selector';
+import { ContactForm, ContactList, Filter } from '../components';
+import { PhoneBookStyled } from '../components/App/App.module';
+import { fetchContacts } from 'redux/contact/operations';
+import { getError, getIsLoading } from 'redux/contact/selector';
 
 export const PhoneBook = () => {
   const isLoading = useSelector(getIsLoading);
